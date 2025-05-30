@@ -9,7 +9,7 @@
 ---
 ### ***INCLUDE***
 ``` go
-"https://github.com/lignigno/lascii/lascii"
+"github.com/lignigno/lascii/lascii"
 ```
 
 ---
