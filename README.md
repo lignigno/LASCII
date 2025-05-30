@@ -8,6 +8,11 @@
 
 ---
 ### ***INCLUDE***
+
+``` bash
+go get "github.com/lignigno/lascii"
+```
+
 ``` go
 "github.com/lignigno/lascii/lascii"
 ```
