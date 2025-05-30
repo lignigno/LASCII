@@ -10,7 +10,7 @@
 ### ***INCLUDE***
 
 ``` bash
-go get "github.com/lignigno/lascii"
+go get "github.com/lignigno/lascii/lascii"
 ```
 
 ``` go
