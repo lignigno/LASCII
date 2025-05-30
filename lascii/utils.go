@@ -21,23 +21,3 @@ func resizeRune(original _BaseRune_t, newSize _Size2_t) _BaseRune_t {
 
 	return newRune
 }
-
-// ____________________________________________________________________________________MIN
-
-func min(l, r int) int {
-	if l < r {
-		return l
-	}
-
-	return r
-}
-
-// ____________________________________________________________________________________MAX
-
-func max(l, r int) int {
-	if l > r {
-		return l
-	}
-
-	return r
-}
