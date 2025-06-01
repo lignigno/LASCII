@@ -1,4 +1,4 @@
-package lascii
+package ponylascii
 
 import (
 	"bufio"

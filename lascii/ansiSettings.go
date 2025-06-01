@@ -1,4 +1,4 @@
-package lascii
+package ponylascii
 
 // _____________________________________________________________CONVERT COLOR TO SGR VALUE
 

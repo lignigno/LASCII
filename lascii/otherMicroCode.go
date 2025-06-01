@@ -1,4 +1,4 @@
-package lascii
+package ponylascii
 
 // _________________________________________________________________________GET FONT NAMES
 
