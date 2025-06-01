@@ -6,15 +6,16 @@
 <br>
 <br>
 
----
-### ***INCLUDE***
+<h2 align="center"> 2 STEPS TO INSTALL</h2>
 
-``` go
-"github.com/lignigno/lascii"
+### ***DOWNLOAD***
+``` bash
+go get 'github.com/lignigno/lascii@v0.2.1'
 ```
 
-``` bash
-go get "github.com/lignigno/lascii"
+### ***INCLUDE***
+``` go
+"github.com/lignigno/lascii/lascii"
 ```
 
 ---
