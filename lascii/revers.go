@@ -77,7 +77,7 @@ func restoreText(art [][]rune, canvas [][]_DetLayer) string {
 
 // ______________________________________________________________________________MAIN FUNC
 
-func ConvertArt2text(art [][]rune) ([]Findings_t, int) {
+func сonvertArt2text(art [][]rune) ([]Findings_t, int) {
 	findings := make([]Findings_t, 0, 1)
 	var filedSquare int
 
