@@ -1,3 +1,3 @@
-module github.com/lignigno/lascii/lascii
+module github.com/lignigno/lascii
 
 go 1.24.2
