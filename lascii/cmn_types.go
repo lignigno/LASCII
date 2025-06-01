@@ -148,7 +148,3 @@ type _CanvasCell struct {
 	Det _DetLayer
 	R   rune
 }
-
-type _Runes struct {
-	runeName rune
-}
