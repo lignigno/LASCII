@@ -1,4 +1,4 @@
-package ponylascii
+package lascii
 
 // ____________________________________________________________________________RESIZE RUNE
 
