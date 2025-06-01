@@ -10,11 +10,11 @@
 ### ***INCLUDE***
 
 ``` go
-"github.com/lignigno/lascii/lascii"
+"github.com/lignigno/lascii"
 ```
 
 ``` bash
-go mod tidy
+go get "github.com/lignigno/lascii"
 ```
 
 ---
