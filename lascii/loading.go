@@ -132,7 +132,7 @@ func getRawFont(path string) ([]string, error) {
 // --------------------------------------------------------------------------------------|
 //                                                                                       |
 
-func ConvertFontParams2Regexp(height int, HardASCII bool) string {
+func convertFontParams2Regexp(height int, HardASCII bool) string {
 	rule := `^`
 
 	if !HardASCII {
@@ -227,7 +227,7 @@ func parseFont(rawFont []string, width, height int, HardASCII bool) (_Font_t, er
 		Runes:      make(map[rune]_Rune_t),
 	}
 
-	rule := ConvertFontParams2Regexp(height, HardASCII)
+	rule := convertFontParams2Regexp(height, HardASCII)
 	rgxpParam, err := regexp.Compile(rule)
 	if err != nil {
 		return font, err
