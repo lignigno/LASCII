@@ -265,7 +265,7 @@ func parseFont(rawFont []string, width, height int, HardASCII bool) (_Font_t, er
 // ______________________________________________________________________________MAIN FUNC
 
 func LoadFonts(fonts LoadingSettings_t) error {
-	fmt.Printf("some test\n")
+	fmt.Printf("some test2\n")
 	return nil
 	dsts, err := getFileDsts(fonts.Path)
 	if err != nil {
