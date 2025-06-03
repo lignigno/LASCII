@@ -378,10 +378,13 @@ func createCanvas(blueprint *_BluePrint_t) [][]rune {
 
 // ______________________________________________________________________________MAIN FUNC
 
-func CreateArt(fontName string, text []rune, lsb *LSB_t) ([][]rune, error) {
+func CreateArt(text []rune, fontName string, lsb *LSB_t) ([][]rune, error) {
 	font, ok := _fontsLib.Fonts[fontName]
 	if !ok {
 		return nil, errors.New("font {" + fontName + "} not exist")
+	}
+	if lsb == nil {
+		return nil, errors.New("lsb is nil")
 	}
 
 	if _printSettings.Align == ALIGN_JUSTIFY {
