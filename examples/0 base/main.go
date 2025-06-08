@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/lignigno/LASCII/lascii"
+	"github.com/lignigno/LASCII/v2/lascii"
 )
 
 const (

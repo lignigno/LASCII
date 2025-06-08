@@ -23,6 +23,18 @@ go get 'github.com/lignigno/LASCII/v2@latest'
 <br>
 <br>
 
+<h2 align="center"> INSTALL EXEMPLES </h2>
+
+``` bash
+git clone https://github.com/lignigno/LASCII.git && \
+LASCII/examples/install.sh
+```
+
+---
+
+<br>
+<br>
+
 <h2 align="center"> FUNCTIONS </h2>
 
 ``` go
