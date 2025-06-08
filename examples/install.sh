@@ -1,13 +1,11 @@
 #!/bin/bash
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-cd "$SCRIPT_DIR/.."
-EXCLUDE="examples fonts"
+cd "$SCRIPT_DIR"
+NEED_DEL=$(ls -A)
 
-for dir in */; do
-  if [[ ! " $EXCLUDE " =~ " $dir " ]]; then
-    rm -rf "$dir"
+for item in $NEED_DEL; do
+  if [[ "$item" != "examples" && "$item" != "fonts" ]]; then
+    rm -rf "$item"
   fi
 done
-
-echo "complete!"
