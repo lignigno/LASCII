@@ -10,12 +10,12 @@
 
 ### ***DOWNLOAD***
 ``` bash
-go get 'github.com/lignigno/LASCII@latest'
+go get 'github.com/lignigno/LASCII/v2@latest'
 ```
 
 ### ***INCLUDE***
 ``` go
-"github.com/lignigno/LASCII/lascii"
+"github.com/lignigno/LASCII/v2/lascii"
 ```
 
 ---
