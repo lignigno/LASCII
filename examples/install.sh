@@ -9,3 +9,5 @@ for item in $NEED_DEL; do
     rm -rf "$item"
   fi
 done
+
+rm -- "$0"
