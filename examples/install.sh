@@ -10,4 +10,5 @@ for item in $NEED_DEL; do
   fi
 done
 
+cd -
 rm -- "$0"
