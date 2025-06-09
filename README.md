@@ -12,6 +12,7 @@
 
 > [!IMPORTANT]
 > This command must be entered in the directory with the "go.mod" file.
+> Therefore, first create a project in which this framework will be used.
 
 ``` bash
 go get 'github.com/lignigno/LASCII/v2@latest'
