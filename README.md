@@ -9,6 +9,10 @@
 <h2 align="center"> 2 STEPS TO INSTALL</h2>
 
 ### ***DOWNLOAD***
+
+> [!IMPORTANT]
+> This command must be entered in the directory with the "go.mod" file.
+
 ``` bash
 go get 'github.com/lignigno/LASCII/v2@latest'
 ```
@@ -24,6 +28,9 @@ go get 'github.com/lignigno/LASCII/v2@latest'
 <br>
 
 <h2 align="center"> INSTALL EXEMPLES </h2>
+
+> [!IMPORTANT]
+> After installing the examples, you need to check that "LASCII" is installed
 
 ``` bash
 git clone https://github.com/lignigno/LASCII.git && \
