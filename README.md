@@ -38,6 +38,9 @@ git clone https://github.com/lignigno/LASCII.git && \
 LASCII/examples/install.sh
 ```
 
+> [!TIP]
+> For other fonts https://manytools.org/hacker-tools/ascii-banner/
+
 ---
 
 <br>
