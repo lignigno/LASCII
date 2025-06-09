@@ -31,6 +31,7 @@ go get 'github.com/lignigno/LASCII/v2@latest'
 
 > [!IMPORTANT]
 > After installing the examples, you need to check that "LASCII" is installed
+> (see the instructions above)
 
 ``` bash
 git clone https://github.com/lignigno/LASCII.git && \
