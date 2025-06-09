@@ -236,26 +236,26 @@ func parseFont(rawFont []string, width, height int, HardASCII bool) (_Font_t, er
 	heightSetting := height
 	asciiCode := _FIRST_ASCII_CODE
 	for i := 0; i < len(rawFont); i, asciiCode = i+1, asciiCode+1 {
-		rawParams, charName := rgxpParam.FindStringSubmatch(rawFont[i]), rune(asciiCode)
+		rawParams, runeName := rgxpParam.FindStringSubmatch(rawFont[i]), rune(asciiCode)
 		if rawParams == nil {
-			return font, errors.New("incorrect char parameter {" + rawFont[i] + "}")
+			return font, errors.New("incorrect rune params {" + rawFont[i] + "}")
 		}
-		charName, height, err = getCharParams(charName, heightSetting, HardASCII, rawParams)
+		runeName, height, err = getCharParams(runeName, heightSetting, HardASCII, rawParams)
 		if err != nil {
 			return font, err
 		}
 
-		if _, ok := font.Runes[charName]; ok {
-			return font, errors.New("rune {" + string(charName) + "} in font exist")
+		if _, ok := font.Runes[runeName]; ok {
+			return font, errors.New("rune {" + string(runeName) + "} in font exist")
 		}
 
-		font.Runes[charName], err = parseChar(rawFont, i+1, width, height)
+		font.Runes[runeName], err = parseChar(rawFont, i+1, width, height)
 		if err != nil {
-			return font, errors.New("{" + string(charName) + "} " + err.Error())
+			return font, errors.New("rune name {" + string(runeName) + "} " + err.Error())
 		}
-		font.MaxSize.W = max(font.MaxSize.W, font.Runes[charName].Letter.Size.W)
-		font.MaxSize.H = max(font.MaxSize.H, font.Runes[charName].Letter.Size.H)
-		i += font.Runes[charName].Letter.Size.H
+		font.MaxSize.W = max(font.MaxSize.W, font.Runes[runeName].Letter.Size.W)
+		font.MaxSize.H = max(font.MaxSize.H, font.Runes[runeName].Letter.Size.H)
+		i += font.Runes[runeName].Letter.Size.H
 	}
 
 	return font, nil
