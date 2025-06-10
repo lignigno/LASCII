@@ -24,14 +24,14 @@ func convetParam2Value(param SGRParam_t, value SGRValue_t) SGRValue_t {
 // --------------------------------------------------------------------------------------|
 //                                                                                       |
 
-func SetSGRParam(sgrSettings *SGRSettings_t, param SGRParam_t, value SGRValue_t) {
+func SetSGRParam(layer *SGRSettings_t, param SGRParam_t, value SGRValue_t) {
 	for groupID := 0; groupID < _NUM_SGR_GROUPS; groupID++ {
 		for i := 0; i < len(_sgrGroups[groupID].Params); i += 2 {
 			from := _sgrGroups[groupID].Params[i]
 			to := _sgrGroups[groupID].Params[i+1]
 
 			if from <= param && param <= to {
-				(*sgrSettings)[groupID] = convetParam2Value(param, value)
+				(*layer)[groupID] = convetParam2Value(param, value)
 				return
 			}
 		}
