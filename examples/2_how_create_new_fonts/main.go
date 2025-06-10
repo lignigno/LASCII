@@ -37,9 +37,8 @@ func main() {
 	// чтобы создать новый шрифт с тенью укажем какие шрифты будем использовать
 	newFontName := "new mixed font"
 	fontMix := lascii.FontMixSettings_t{
-		NewName:    newFontName,       // как назовём новый шрифт
-		BaseName:   "style_2_letters", // основной шрифт, все настройки берутся из него
-		WithShadow: true,
+		NewName:    newFontName,                 // как назовём новый шрифт
+		BaseName:   "style_2_letters",           // основной шрифт, все настройки берутся из него
 		ShadowName: "style_2_shadow_2",          // какой шрифт будет тенью
 		Offset:     lascii.Vec2_t{X: -6, Y: -3}, // на сколько тень будет смещаться
 	}
