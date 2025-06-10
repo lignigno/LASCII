@@ -13,7 +13,7 @@ func validateSettings(settings FontMixSettings_t) error {
 	if _, ok := _fontsLib.Fonts[settings.BaseName]; !ok {
 		return errors.New("incorrect font name {" + settings.BaseName + "}")
 	}
-	if _, ok := _fontsLib.Fonts[settings.ShadowName]; settings.WithShadow && !ok {
+	if _, ok := _fontsLib.Fonts[settings.ShadowName]; !ok {
 		return errors.New("incorrect font name {" + settings.ShadowName + "}")
 	}
 
@@ -28,16 +28,14 @@ func mixRunes(newFont *_Font_t, settings FontMixSettings_t) {
 	newFont.Runes = make(map[rune]_Rune_t)
 
 	for k, v := range _fontsLib.Fonts[settings.BaseName].Runes {
-		if settings.WithShadow {
-			if newFont.NullRune != nil {
-				// буква есть, а тени нету тогда краказября у тени
-				v.Shadow = newFont.NullRune.Shadow
-			}
+		if newFont.NullRune != nil {
+			// буква есть, а тени нету тогда краказябра у тени
+			v.Shadow = newFont.NullRune.Shadow
+		}
 
-			if char, ok := _fontsLib.Fonts[settings.ShadowName].Runes[k]; ok {
-				v.Shadow = &char.Letter
-				newFont.EmptyRuneS = _fontsLib.Fonts[settings.ShadowName].EmptyRuneL
-			}
+		if char, ok := _fontsLib.Fonts[settings.ShadowName].Runes[k]; ok {
+			v.Shadow = &char.Letter
+			newFont.EmptyRuneS = _fontsLib.Fonts[settings.ShadowName].EmptyRuneL
 		}
 
 		newFont.Runes[k] = v

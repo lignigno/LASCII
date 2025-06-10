@@ -43,7 +43,6 @@ type LoadingSettings_t struct {
 type FontMixSettings_t struct {
 	NewName    string
 	BaseName   string
-	WithShadow bool
 	ShadowName string
 	Offset     Vec2_t
 }
