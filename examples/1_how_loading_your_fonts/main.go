@@ -59,7 +59,7 @@ func main() {
 	fmt.Printf("==========\n")
 
 	// code for comment/uncomment [simple uncoment] :
-	checkFonts()
+	// checkFonts()
 	fmt.Printf("\nBefore /\\\n")
 
 	fmt.Printf("==========\n")
@@ -127,7 +127,7 @@ func path() string {
 	// запусти и посмотри что получится
 
 	// code for comment/uncomment [path ex0] :
-	resultPath = "defaults/"
+	// resultPath = "defaults/"
 
 	// добавились шрифты которые лежали в папке "defaults"
 	// к слову папка может быть указана без символа "/"
@@ -217,8 +217,9 @@ func height() int {
 	// автоматическая и строгая
 	// но при автоматической высота берётся из строки "rune params" общего шаблона
 
-	// давай попробуем так загрузить шрифт super_space
+	// давай попробуем загрузить шрифт super_space
 	// раскоментируй "path ex6" и "height ex0"
+	// и найди сам шрифт чтобы посмотреть что в нём указано
 
 	// code for comment/uncomment [height ex0] :
 	// resultHeight = 0
@@ -247,8 +248,8 @@ func hardASCII() bool {
 	// для примера можно попробовать загрузить шрифт style_simple.txt
 	// раскоментируй
 	// "path ex7"
-	// "hardASCII ex0"
 	// "height ex1"
+	// "hardASCII ex0"
 
 	// code for comment/uncomment [hardASCII ex0] :
 	// resultHardASCII = false

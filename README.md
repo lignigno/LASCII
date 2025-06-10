@@ -31,7 +31,7 @@ go get 'github.com/lignigno/LASCII/v2@latest'
 <h2 align="center"> INSTALL EXEMPLES </h2>
 
 > [!IMPORTANT]
-> After installing the examples, you need to check that "LASCII" is installed
+> After installing the examples, you need to check that "LASCII" is downloaded
 > (see the instructions above)
 
 ``` bash
