@@ -127,14 +127,15 @@ type _FileDestination_t struct {
 	Ext      string
 }
 
-type _LSBTabe_t = []string
+type _LSBTabe_t = [_NUM_CHANGES_VARIANTS]string
 
 type _BluePrint_t struct {
-	Size       _Size2_t
-	LettersPos []Vec2_t
-	RowCanvas  [][]_CanvasCell
-	RealWidths []int
-	Changes    _LSBTabe_t
+	Size         _Size2_t
+	LettersPos   []Vec2_t
+	RowCanvas    [][]_CanvasCell
+	RealWidths   []int
+	Changes      _LSBTabe_t
+	ChangesExist bool
 }
 
 type _DetLayer = int32

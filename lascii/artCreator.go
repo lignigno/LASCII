@@ -60,9 +60,9 @@ func getChange(SettingLeft, SettingRight SGRSettings_t) string {
 
 // --------------------------------------------------------------------------------------|
 
-func createLSBChanges(lsb *LSB_t) _LSBTabe_t {
+func createLSBChanges(lsb *LSB_t) (_LSBTabe_t, bool) {
 	empty := SGRSettings_t{}
-	SetSGRParam(&empty, _SGR_RESET_ALL, SGR_PARAM_ON)
+	changesExitst := true
 
 	// changeID = 4 * prev + current
 	//  0  1  2  3    4  5  6  7    8  9 10 11   12 13 14 15
@@ -80,7 +80,18 @@ func createLSBChanges(lsb *LSB_t) _LSBTabe_t {
 		_SGR_RESET_SEQUENCE, getChange(lsb.B, lsb.L), getChange(lsb.B, lsb.S), "",
 	}
 
-	return changes
+	count := 0
+	for i := range changes {
+		if len(changes[i]) > 3 {
+			count++
+		}
+	}
+	if count == 0 {
+		changes = _LSBTabe_t{}
+		changesExitst = false
+	}
+
+	return changes, changesExitst
 }
 
 //                                                                                       |
@@ -322,7 +333,10 @@ func calcRealWidths(blueprint *_BluePrint_t) {
 	blueprint.RealWidths = make([]int, blueprint.Size.H)
 
 	for y := range blueprint.Size.H {
-		sum := len(_SGR_RESET_SEQUENCE)
+		sum := 0
+		if blueprint.ChangesExist {
+			sum = len(_SGR_RESET_SEQUENCE)
+		}
 		prev := _DET_NULL
 		current := _DET_NULL
 		for x := range blueprint.Size.W {
@@ -367,9 +381,11 @@ func createCanvas(blueprint *_BluePrint_t) [][]rune {
 
 			prev = current
 		}
-		for _, r := range _SGR_RESET_SEQUENCE {
-			canvas[y][blueprint.Size.W+offset] = r
-			offset++
+		if blueprint.ChangesExist {
+			for _, r := range _SGR_RESET_SEQUENCE {
+				canvas[y][blueprint.Size.W+offset] = r
+				offset++
+			}
 		}
 	}
 
@@ -394,7 +410,7 @@ func CreateArt(text []rune, fontName string, lsb *LSB_t) ([][]rune, error) {
 	}
 
 	blueprint := _BluePrint_t{}
-	blueprint.Changes = createLSBChanges(lsb)
+	blueprint.Changes, blueprint.ChangesExist = createLSBChanges(lsb)
 	text, blueprint.Size, blueprint.LettersPos = calcMarkup(&font, text)
 
 	if blueprint.Size.W > _printSettings.MaxWidth {
