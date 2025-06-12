@@ -67,7 +67,7 @@ func SetSGRParam(sgrSettings *SGRSettings_t, param SGRParam_t, value SGRValue_t)
 func ConvertColor2SGRValue(mode SGRColorMode_t, color Color_t) SGRValue_t
 
 // create text for print
-func CreateArt(fontName string, text []rune, lsb *LSB_t) ([][]rune, error)
+func CreateArt(text []rune, fontName string, lsb *LSB_t) ([][]rune, error)
 
 // WILL BE SOON
 
